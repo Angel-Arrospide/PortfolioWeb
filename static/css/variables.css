@@ -1,0 +1,42 @@
+/* -----------------------------------
+   Variables para Tema Claro (por defecto)
+----------------------------------- */
+:root {
+    /* Colores del tema claro */
+    --primary-color: #333; /* Color principal */
+    --secondary-color: #666; /* Color secundario */
+    --background-color: #f4f4f4; /* Fondo general */
+    --container-bg: #fff; /* Fondo de contenedores */
+    --accent-color: #007BFF; /* Azul moderno para acentos */
+    --footer-bg: #333; /* Fondo del footer en tema claro */
+    --footer-text-color: #fff; /* Color de texto del footer */
+
+    --border-radius: 10px; /* Radio de borde para elementos */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra para elementos */
+
+    /* Tipografía y tamaños */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+    --font-size-large: 2rem; /* Tamaño de fuente grande */
+    --font-size-medium: 1.5rem; /* Tamaño de fuente medio */
+    --font-size-small: 1rem; /* Tamaño de fuente pequeño */
+
+    /* Espaciado */
+    --spacing: 20px; /* Espaciado base */
+}
+
+/* -----------------------------------
+   Variables para Tema Oscuro
+----------------------------------- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #f1f1f1; /* Color de texto en modo oscuro */
+        --secondary-color: #cccccc; /* Color secundario en modo oscuro */
+        --background-color: #121212; /* Fondo oscuro */
+        --container-bg: #1e1e1e; /* Fondo de contenedores más claro en oscuro */
+        --accent-color: #1e90ff; /* Azul claro para acentos en modo oscuro */
+        --footer-bg: #000; /* Fondo del footer en tema oscuro */
+        --footer-text-color: #f1f1f1; /* Color de texto del footer en oscuro */
+
+        --box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Sombra para elementos en oscuro */
+    }
+}
