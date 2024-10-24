@@ -15,7 +15,8 @@
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra para elementos */
 
     /* Tipografía y tamaños */
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+    --font-family: "Cairo", Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+    --font-size-xlarge: 4rem;
     --font-size-large: 2rem; /* Tamaño de fuente grande */
     --font-size-medium: 1.5rem; /* Tamaño de fuente medio */
     --font-size-small: 1rem; /* Tamaño de fuente pequeño */
@@ -23,6 +24,7 @@
     /* Espaciado */
     --spacing: 20px; /* Espaciado base */
 }
+
 
 /* -----------------------------------
    Variables para Tema Oscuro
@@ -38,5 +40,42 @@
         --footer-text-color: #f1f1f1; /* Color de texto del footer en oscuro */
 
         --box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Sombra para elementos en oscuro */
+    }
+}
+
+
+/* -----------------------------------
+   Fonts
+----------------------------------- */
+.bruno-ace-sc-regular {
+    font-family: "Bruno Ace SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* -----------------------------------
+   Responsive
+----------------------------------- */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    :root {
+        --font-size-xlarge: 2.5rem; /* Ajuste para móviles */
+        --font-size-large: 1.5rem;
+        --font-size-medium: 1.2rem;
+        --font-size-small: 0.9rem;
+        --spacing: 15px; /* Espaciado más pequeño para móviles */
+    }
+}
+
+/* Para tablets y pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+    :root {
+        --font-size-xlarge: 3.5rem; /* Ajuste para tablets */
+        --font-size-large: 1.75rem;
+        --font-size-medium: 1.4rem;
+        --font-size-small: 1rem;
+        --spacing: 18px; /* Espaciado ajustado para tablets */
     }
 }

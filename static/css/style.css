@@ -23,6 +23,7 @@ body {
     transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de tema */
 }
 
+
 /* -----------------------------------
    Contenedores
 ----------------------------------- */
@@ -60,7 +61,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: var(--font-size-xlarge);
     color: var(--primary-color);
     letter-spacing: 1px;
 }
@@ -71,6 +72,17 @@ header p {
 }
 
 /* -----------------------------------
+   Todas las secciones
+----------------------------------- */
+
+h2 {
+    font-size: var(--font-size-large);
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* -----------------------------------
    Sección Sobre mí
 ----------------------------------- */
 .about-me {
@@ -78,11 +90,7 @@ header p {
     text-align: center;
 }
 
-.about-me h2 {
-    font-size: var(--font-size-large);
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
+
 
 .about-me p {
     font-size: var(--font-size-small);
@@ -121,17 +129,10 @@ header p {
     margin-bottom: 40px; /* Margen inferior para la sección */
 }
 
-.skills h2 {
-    font-size: var(--font-size-large); /* Tamaño de fuente para el título */
-    margin-bottom: 20px; /* Margen inferior para el título */
-    text-align: center; /* Centrar el texto */
-    color: var(--primary-color); /* Color del título */
-}
-
 #skills-list {
     display: flex; /* Usar flexbox para alinear ítems */
     flex-wrap: wrap; /* Permitir que los ítems se envuelvan */
-    justify-content: space-between; /* Distribuir espacio entre los ítems */
+    justify-content: space-around; /* Distribuir espacio entre los ítems */
 }
 
 .skill-item {
@@ -142,7 +143,7 @@ header p {
     padding: var(--spacing); /* Espaciado interno */
     margin: 10px; /* Margen entre los ítems */
     border-radius: var(--border-radius); /* Bordes redondeados */
-    width: calc(22% - 20px); /* Ancho de los ítems (aproximadamente 4 por fila) */
+    width: calc(33% - 20px); /* Ancho de los ítems (aproximadamente 4 por fila) */
     text-align: center; /* Centrar el texto */
     box-shadow: var(--box-shadow); /* Sombra para los ítems */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
@@ -171,13 +172,6 @@ header p {
 ----------------------------------- */
 .experience {
     margin-bottom: 40px;
-}
-
-.experience h2 {
-    font-size: var(--font-size-large);
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--primary-color);
 }
 
 #experience-list {
@@ -223,13 +217,6 @@ header p {
     margin-bottom: 40px;
 }
 
-.education h2 {
-    font-size: var(--font-size-large);
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--primary-color);
-}
-
 #education-list {
     display: flex;
     flex-direction: column;
@@ -273,13 +260,6 @@ header p {
     margin-bottom: 40px;
 }
 
-.projects h2 {
-    font-size: var(--font-size-large);
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--primary-color);
-}
-
 #project-list {
     display: flex;
     flex-wrap: wrap;
@@ -317,13 +297,6 @@ header p {
 ----------------------------------- */
 .certifications {
     margin-bottom: 40px;
-}
-
-.certifications h2 {
-    font-size: var(--font-size-large);
-    margin-bottom: 20px;
-    text-align: center;
-    color: var(--primary-color);
 }
 
 #certification-list {
