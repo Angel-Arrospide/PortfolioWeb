@@ -8,8 +8,8 @@
     --background-color: #f4f4f4; /* Fondo general */
     --container-bg: #fff; /* Fondo de contenedores */
     --accent-color: #007BFF; /* Azul moderno para acentos */
-    --footer-bg: #333; /* Fondo del footer en tema claro */
-    --footer-text-color: #fff; /* Color de texto del footer */
+    --footer-bg: #d3d3d3; /* Fondo del footer en tema claro */
+    --footer-text-color: #333; /* Color de texto del footer */
 
     --border-radius: 10px; /* Radio de borde para elementos */
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra para elementos */
@@ -23,6 +23,7 @@
 
     /* Espaciado */
     --spacing: 20px; /* Espaciado base */
+    --large-spacing: 40px;
 }
 
 
@@ -36,7 +37,7 @@
         --background-color: #121212; /* Fondo oscuro */
         --container-bg: #1e1e1e; /* Fondo de contenedores más claro en oscuro */
         --accent-color: #1e90ff; /* Azul claro para acentos en modo oscuro */
-        --footer-bg: #000; /* Fondo del footer en tema oscuro */
+        --footer-bg: #333; /* Fondo del footer en tema oscuro */
         --footer-text-color: #f1f1f1; /* Color de texto del footer en oscuro */
 
         --box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Sombra para elementos en oscuro */
@@ -66,6 +67,7 @@
         --font-size-medium: 1.2rem;
         --font-size-small: 0.9rem;
         --spacing: 15px; /* Espaciado más pequeño para móviles */
+        --large-spacing: 30px;
     }
 }
 

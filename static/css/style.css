@@ -58,6 +58,9 @@ main {
 header {
     text-align: center;
     margin-bottom: 40px;
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Comienza ligeramente desplazado hacia abajo */
+    animation: fadeInUp 1.5s ease-out forwards; /* Aparece con animación */
 }
 
 header h1 {
@@ -71,6 +74,15 @@ header p {
     font-size: var(--font-size-medium);
 }
 
+/* Definición de la animación */
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Aparece completamente visible */
+        transform: translateY(0); /* Se mueve a su posición original */
+    }
+}
+
+
 /* -----------------------------------
    Todas las secciones
 ----------------------------------- */
@@ -82,6 +94,11 @@ h2 {
     text-align: center;
 }
 
+section {
+    margin-bottom: var(--large-spacing); /* Margen inferior para la sección */
+
+}
+
 /* -----------------------------------
    Sección Sobre mí
 ----------------------------------- */
@@ -89,8 +106,6 @@ h2 {
     margin-bottom: 40px;
     text-align: center;
 }
-
-
 
 .about-me p {
     font-size: var(--font-size-small);
@@ -125,9 +140,6 @@ h2 {
 /* -----------------------------------
    Sección Habilidades
 ----------------------------------- */
-.skills {
-    margin-bottom: 40px; /* Margen inferior para la sección */
-}
 
 #skills-list {
     display: flex; /* Usar flexbox para alinear ítems */
@@ -170,10 +182,6 @@ h2 {
 /* -----------------------------------
    Sección de Experiencia
 ----------------------------------- */
-.experience {
-    margin-bottom: 40px;
-}
-
 #experience-list {
     display: flex;
     flex-direction: column;
@@ -213,9 +221,6 @@ h2 {
 /* -----------------------------------
    Sección de Educación
 ----------------------------------- */
-.education {
-    margin-bottom: 40px;
-}
 
 #education-list {
     display: flex;
@@ -256,10 +261,6 @@ h2 {
 /* -----------------------------------
    Sección Proyectos
 ----------------------------------- */
-.projects {
-    margin-bottom: 40px;
-}
-
 #project-list {
     display: flex;
     flex-wrap: wrap;
@@ -295,10 +296,6 @@ h2 {
 /* -----------------------------------
    Sección de Certificaciones
 ----------------------------------- */
-.certifications {
-    margin-bottom: 40px;
-}
-
 #certification-list {
     display: flex;
     flex-direction: column;
@@ -331,7 +328,7 @@ h2 {
 
 .certification-item .certification-date {
     font-size: 0.9rem;
-    color: #888;
+    color: var(--secondary-color);
     margin-top: 10px;
 }
 
@@ -344,12 +341,6 @@ footer {
     background-color: var(--footer-bg); /* Fondo del footer basado en la variable */
     color: var(--footer-text-color); /* Color de texto basado en la variable */
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: box-shadow 0.3s ease;
-}
-
-footer:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* -----------------------------------
