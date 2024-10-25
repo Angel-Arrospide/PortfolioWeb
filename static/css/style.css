@@ -141,42 +141,76 @@ section {
    Sección Habilidades
 ----------------------------------- */
 
-#skills-list {
-    display: flex; /* Usar flexbox para alinear ítems */
-    flex-wrap: wrap; /* Permitir que los ítems se envuelvan */
-    justify-content: space-around; /* Distribuir espacio entre los ítems */
+.skills h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Scrolling Banner Styles */
+.scrolling-banner {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.fade {
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(
+        90deg,
+        var(--container-bg),
+        transparent 30%,
+        transparent 70%,
+        var(--container-bg)
+    );
+    inset: 0;
+    pointer-events: none;
+}
+
+.skills-list {
+    display: flex;
+    animation: scroll 20s linear infinite; /* Infinite horizontal scrolling */
 }
 
 .skill-item {
-    display: flex; /* Usar flex para alinear íconos y texto */
-    flex-direction: column; /* Colocar el ícono encima del texto */
-    align-items: center; /* Centrar horizontalmente el contenido */
-    background-color: var(--container-bg); /* Fondo de los ítems */
-    padding: var(--spacing); /* Espaciado interno */
-    margin: 10px; /* Margen entre los ítems */
-    border-radius: var(--border-radius); /* Bordes redondeados */
-    width: calc(33% - 20px); /* Ancho de los ítems (aproximadamente 4 por fila) */
-    text-align: center; /* Centrar el texto */
-    box-shadow: var(--box-shadow); /* Sombra para los ítems */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--container-bg);
+    padding: var(--spacing);
+    margin: 0 10px; /* Horizontal margin for spacing */
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 150px; /* Fixed width for each item */
 }
 
 .skill-item:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra más intensa al pasar el ratón */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .skill-item i {
-    margin-bottom: 10px; /* Espacio debajo del ícono para separación del texto */
-    color: var(--primary-color); /* Color del ícono igual al color del texto */
-    font-size: 2.5em; /* Tamaño del ícono más grande */
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 2.5em;
 }
 
 .skill-item span {
-    font-size: var(--font-size-small); /* Tamaño de fuente para el texto de habilidad */
-    color: var(--primary-color); /* Color del texto de habilidad */
+    font-size: var(--font-size-small);
+    color: var(--primary-color);
 }
 
+/* Infinite Scroll Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 
 /* -----------------------------------
