@@ -15,11 +15,21 @@
 
 </head>
 <body>
+    <header>
+
+    </header>
     <main>
-        <header>
+        <section class="title">
             <h1 class="bruno-ace-sc-regular">Ángel Arróspide</h1>
             <p>Estudiante de Ingenieria Informática en Tecnologías de la Información</p>
-        </header>
+        </section>
+
+        <section class="scrolling-skills">
+            <div id="skills-list-1" class="skills-list"></div>
+            <div id="skills-list-2" class="skills-list"></div>
+            <div class="fade"></div>
+            <script src="static/js/skills.js"></script>
+        </section>
 
         <section class="about-me">
             <h2>Sobre mí</h2>
@@ -37,46 +47,40 @@
                     <i class="fa-solid fa-envelope"></i>
                 </a>
             </div>
-        </section>
+        </section>  
 
-        <section class="skills">
-            <h2>Habilidades</h2>
-            <div class="scrolling-banner">
-                <div id="skills-list-1" class="skills-list"></div>
-                <div id="skills-list-2" class="skills-list"></div>
-                <div class="fade"></div>
-            </div>
-            <script src="static/js/skills.js"></script>
-        </section>        
-
-        <section class="experience">
+        <section id="experience">
             <h2>Experiencia</h2>
-            <div id="experience-list"></div>
+            <div id="experience-list" class="default-line"></div>
             <script src="static/js/experience.js"></script>
         </section>
 
         <section class="education">
             <h2>Educación</h2>
-            <div id="education-list"></div>
+            <div id="education-list" class="default-line"></div>
             <script src="static/js/education.js"></script>
         </section>
 
         <section class="projects">
             <h2>Proyectos</h2>
-            <div id="project-list">
-                
-            </div>
+            <div id="project-list" class="default-multi-line default-3-line"></div>
             <script src="static/js/projects.js"></script>
         </section>
 
         <section class="certifications">
             <h2>Certificaciones</h2>
-            <div id="certification-list"></div>
+            <div id="certification-list" class="default-multi-line"></div>
             <script src="static/js/certifications.js"></script>
         </section>
 
+        <section class="courses">
+            <h2>Cursos</h2>
+            <div id="course-list" class="default-line"></div>
+            <script src="static/js/courses.js"></script>
+        </section>
+
         <footer>
-            <p>Contacta conmigo:</p>
+            <h3>¿ Hablamos ?</h3>
             <div class="social-links">
                 <a href="https://linkedin.com/in/angel-arrospide" target="_blank" title="LinkedIn">
                     <i class="fa-brands fa-linkedin"></i>

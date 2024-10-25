@@ -1,22 +1,15 @@
 const educationList = [
     {
-        title: "Licenciatura en Ingeniería Informática",
-        description: "Estudié en la Universidad de Tecnología, donde me especialicé en desarrollo de software y sistemas de información.",
-        startDate: "Septiembre 2015",
-        endDate: "Junio 2019"
+        title: "Grado en Ingeniería Informática en Tecnologías de la Información",
+        institution: "Escuela Politécnica de Ingeniería de Gijón | Universidad de Oviedo",
+        description: [
+            "Cursado en programa bilingue español-inglés",
+            "Nota media: 8,12",
+            "Reconocimientos: 3 matrículas de honor y 3 sobresalientes"
+        ],
+        dates: "Septiembre 2015 - Junio 2019",
     },
-    {
-        title: "Máster en Inteligencia Artificial",
-        description: "Completé un máster en IA enfocado en el aprendizaje automático y redes neuronales en la Universidad de Ciencias Computacionales.",
-        startDate: "Septiembre 2019",
-        endDate: "Junio 2021"
-    },
-    {
-        title: "Diploma en Ciencias de Datos",
-        description: "Un curso intensivo en análisis de datos, estadística avanzada y visualización de datos, impartido por el Instituto de Ciencias de Datos.",
-        startDate: "Julio 2021",
-        endDate: "Diciembre 2021"
-    }
+    // Puedes añadir más objetos de educación aquí
 ];
 
 // Insertar los elementos de educación en la página
@@ -24,11 +17,13 @@ const educationContainer = document.getElementById('education-list');
 
 educationList.forEach(education => {
     const educationDiv = document.createElement('div');
-    educationDiv.classList.add('education-item');
+    educationDiv.classList.add('item');
     educationDiv.innerHTML = `
         <h3>${education.title}</h3>
-        <p>${education.description}</p>
-        <div class="education-date">${education.startDate} - ${education.endDate}</div>
+        <h4>${education.institution}</h4>
+        <p>${education.description.map(i => i).join("<br>")}</p>
+        <div class="light">${education.dates}</div>
     `;
     educationContainer.appendChild(educationDiv);
 });
+

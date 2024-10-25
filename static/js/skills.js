@@ -11,7 +11,7 @@ const skills = [
 ];
 
 // Función para crear la lista de habilidades
-function createSkillsList(id_list) {
+function createSkillsIconList(id_list) {
     const skillsList = document.getElementById(id_list);
     skills.forEach(skill => {
         const skillItem = document.createElement("div");
@@ -22,5 +22,5 @@ function createSkillsList(id_list) {
 }
 
 // Llamar a la función para crear la lista
-createSkillsList("skills-list-1");
-createSkillsList("skills-list-2");
+createSkillsIconList("skills-list-1");
+createSkillsIconList("skills-list-2");

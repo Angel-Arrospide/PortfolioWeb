@@ -1,18 +1,18 @@
 const certifications = [
     {
-        title: "Certificado en Desarrollo Web",
-        description: "Curso de Desarrollo Web completo donde aprendí HTML, CSS, JavaScript y frameworks modernos.",
-        date: "Agosto 2020"
+        title: "First Certificate in English (B2)",
+        institution: "Cambridge University Press & Assessment",
+        date: "Octubre 2021"
     },
     {
-        title: "Certificado en Data Science",
-        description: "Certificación obtenida tras completar un curso intensivo sobre análisis de datos y machine learning.",
-        date: "Mayo 2021"
+        title: "Operador de UAS <br> Categoría abierta A1 y A3",
+        institution: "AESA - Agencia Estatal de Seguridad Aérea",
+        date: "Agosto 2024"
     },
     {
-        title: "Certificado en Gestión de Proyectos Ágiles",
-        description: "Certificación en gestión de proyectos siguiendo metodologías ágiles como Scrum y Kanban.",
-        date: "Enero 2022"
+        title: "Advanced Certificate in English (C1)",
+        institution: "Cambridge University Press & Assessment",
+        date: "Octubre 2024"
     }
 ];
 
@@ -21,11 +21,11 @@ const certificationList = document.getElementById('certification-list');
 
 certifications.forEach(certification => {
     const certificationDiv = document.createElement('div');
-    certificationDiv.classList.add('certification-item');
+    certificationDiv.classList.add('item');
     certificationDiv.innerHTML = `
         <h3>${certification.title}</h3>
-        <p>${certification.description}</p>
-        <div class="certification-date">${certification.date}</div>
+        <p>${certification.institution}<p>
+        <div class="light">${certification.date}</div>
     `;
     certificationList.appendChild(certificationDiv);
 });
