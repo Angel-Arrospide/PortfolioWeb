@@ -5,9 +5,11 @@
     /* Colores del tema claro */
     --primary-color: #333; /* Color principal */
     --secondary-color: #666; /* Color secundario */
+    --light-color: #888;
+    --accent-color: #007BFF; /* Azul moderno para acentos */
+
     --background-color: #f4f4f4; /* Fondo general */
     --container-bg: #fff; /* Fondo de contenedores */
-    --accent-color: #007BFF; /* Azul moderno para acentos */
     --footer-bg: #d3d3d3; /* Fondo del footer en tema claro */
     --footer-text-color: #333; /* Color de texto del footer */
 
@@ -16,6 +18,8 @@
 
     /* Tipografía y tamaños */
     --font-family: "Cairo", Tahoma, Geneva, Verdana, sans-serif; /* Tipografía */
+
+    --font-size-header: 9rem;
     --font-size-xlarge: 4rem;
     --font-size-large: 2rem; /* Tamaño de fuente grande */
     --font-size-medium: 1.5rem; /* Tamaño de fuente medio */
@@ -23,8 +27,12 @@
 
     /* Espaciado */
     --small-spacing: 10px;
-    --spacing: 20px; /* Espaciado base */
+    --spacing: 20px;
     --large-spacing: 40px;
+    --xlarge-spacing: 100px;
+
+    /* Width header */
+    --header-item-max-width: 990px;
 }
 
 
@@ -60,27 +68,33 @@
    Responsive
 ----------------------------------- */
 
-/* Para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
     :root {
-        --font-size-xlarge: 2.5rem; /* Ajuste para móviles */
-        --font-size-large: 1.5rem;
-        --font-size-medium: 1.2rem;
-        --font-size-small: 0.9rem;
-        --spacing: 15px; /* Espaciado más pequeño para móviles */
-        --small-spacing: 7px;
-        --large-spacing: 30px;
-    }
-}
-
-/* Para tablets y pantallas medianas */
-@media (min-width: 601px) and (max-width: 1024px) {
-    :root {
-        --font-size-xlarge: 3.5rem; /* Ajuste para tablets */
+        --font-size-header: 13vw;
+        --font-size-xlarge: 3.5rem;
         --font-size-large: 1.75rem;
         --font-size-medium: 1.4rem;
         --font-size-small: 1rem;
-        --small-spacing: 5px;
-        --spacing: 18px; /* Espaciado ajustado para tablets */
+
+        --small-spacing: 8px;
+        --spacing: 16px;
+        --large-spacing: 32px;
+        --xlarge-spacing: 48px;
+    }
+}
+
+/* Teléfonos (pantallas pequeñas) */
+@media (max-width: 768px) {
+    :root {
+        --font-size-header: 12vw;
+        --font-size-xlarge: 2.5rem; 
+        --font-size-large: 1.5rem;
+        --font-size-medium: 1.2rem;
+        --font-size-small: 0.9rem;
+
+        --small-spacing: 6px;
+        --spacing: 12px;
+        --large-spacing: 24px;
+        --xlarge-spacing: 36px;
     }
 }

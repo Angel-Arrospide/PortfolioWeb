@@ -15,11 +15,47 @@
 
 </head>
 <body>
-    <header>
+    <header id="header">
+        <div id="header-title" class="fade-away">
+            <h1 class="bruno-ace-sc-regular">Ángel</h1>
+            <h1 class="bruno-ace-sc-regular">Arróspide</h1>
+        </div>
+        <nav id="header-nav" class="fade-away">
+            <a href="#about-me">Sobre mí</a>
+            <a href="#experience">Experiencia</a>
+            <a href="#education">Educación</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#certifications">Certificaciones</a>
+            <a href="#courses">Cursos</a>
+        </nav>
+        <script>
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                const header_title = document.getElementById('header-title');
+                const header_nav = document.getElementById('header-nav');
+                const scrollY = window.scrollY;
+        
+                // Constantes ajustadas para iniciar el desvanecimiento temprano y hacerlo rápido
+                const title_fadeStart = 30;
+                const title_fadeSpeed = window.innerHeight / 2;
+                const nav_fadeStart = 0;
+                const nav_fadeSpeed = window.innerHeight / 6;
+        
+                // Calcular opacidad en función de los desplazamientos
+                let opacity_title = 1 - (scrollY - title_fadeStart) / title_fadeSpeed;
+                let opacity_nav = 1 - (scrollY - nav_fadeStart) / nav_fadeSpeed;
 
+                if(opacity_nav < 0.3) header.style.pointerEvents = 'None';
+                else header.style.pointerEvents = 'All';
+                
+                // Limitar la opacidad entre 0 y 1
+                header_title.style.opacity = opacity_title > 0 ? (opacity_title < 1 ? opacity_title : 1) : 0;
+                header_nav.style.opacity = opacity_nav > 0 ? (opacity_nav < 1 ? opacity_nav : 1) : 0;
+            });
+        </script>
     </header>
     <main>
-        <section class="title">
+        <section class="main-title">
             <h1 class="bruno-ace-sc-regular">Ángel Arróspide</h1>
             <p>Estudiante de Ingenieria Informática en Tecnologías de la Información</p>
         </section>
@@ -31,7 +67,7 @@
             <script src="static/js/skills.js"></script>
         </section>
 
-        <section class="about-me">
+        <section id="about-me">
             <h2>Sobre mí</h2>
             <p>Estudiante de Ingeniería Informática apasionado por la ciberseguridad y ciberinteligencia, convencido de que la creación de entornos seguros es una responsabilidad compartida.</p>
             
@@ -55,25 +91,25 @@
             <script src="static/js/experience.js"></script>
         </section>
 
-        <section class="education">
+        <section id="education">
             <h2>Educación</h2>
             <div id="education-list" class="default-line"></div>
             <script src="static/js/education.js"></script>
         </section>
 
-        <section class="projects">
+        <section id="projects">
             <h2>Proyectos</h2>
             <div id="project-list" class="default-multi-line default-3-line"></div>
             <script src="static/js/projects.js"></script>
         </section>
 
-        <section class="certifications">
+        <section id="certifications">
             <h2>Certificaciones</h2>
             <div id="certification-list" class="default-multi-line"></div>
             <script src="static/js/certifications.js"></script>
         </section>
 
-        <section class="courses">
+        <section id="courses">
             <h2>Cursos</h2>
             <div id="course-list" class="default-line"></div>
             <script src="static/js/courses.js"></script>

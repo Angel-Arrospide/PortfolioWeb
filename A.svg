@@ -1,0 +1,6 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="black" stroke-width="2">
+    <text x="50" y="100" font-family="Arial" font-size="100">A</text>
+    <text x="50" y="100" font-family="Arial" font-size="100" fill="rgba(0, 0, 0, 0.5)">A</text>
+  </g>
+</svg>

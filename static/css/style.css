@@ -1,9 +1,11 @@
 @import url('variables.css');
 
 
-/* -----------------------------------
-   Reset básico
------------------------------------ */
+/* ======================================================================
+
+        ESTRUCTURA
+
+====================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -19,21 +21,39 @@ body {
     line-height: 1.6;
     background-color: var(--background-color);
     color: var(--primary-color);
-    padding: var(--spacing);
+    padding: 0 var(--spacing);
     transition: background-color 0.3s, color 0.3s; /* Transición suave para cambios de tema */
+    pointer-events: none;
 }
 
+header {
+    height: calc(100vh - var(--large-spacing));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    pointer-events: auto;
+    padding: var(--large-spacing);
+}
 
-/* -----------------------------------
-   Contenedores
------------------------------------ */
 main {
     max-width: 1000px;
     margin: 0 auto;
     background-color: var(--container-bg);
     padding: var(--spacing);
+    padding-top: var(--large-spacing);
     border-radius: var(--border-radius);
+    pointer-events: all;
 }
+
+/* ======================================================================
+
+        PARTIALS
+
+====================================================================== */
 
 /* -----------------------------------
    Contenedores
@@ -53,7 +73,7 @@ main {
 }
 
 /* -----------------------------------
-   Partial socials
+   Social links
 ----------------------------------- */
 .social-links {
     display: flex;
@@ -76,25 +96,20 @@ main {
 }
 
 /* -----------------------------------
-   Encabezado
+   Fade Away
 ----------------------------------- */
-.title {
-    text-align: center;
-    margin-bottom: 40px;
-    opacity: 0; /* Comienza invisible */
+
+.fade-away {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* -----------------------------------
+   Animaciones
+----------------------------------- */
+.fade-up {
     transform: translateY(20px); /* Comienza ligeramente desplazado hacia abajo */
     animation: fadeInUp 1.5s ease-out forwards; /* Aparece con animación */
-}
-
-.title h1 {
-    font-size: var(--font-size-xlarge);
-    color: var(--primary-color);
-    letter-spacing: 1px;
-}
-
-.title p {
-    color: var(--secondary-color);
-    font-size: var(--font-size-medium);
+    opacity: 0; /* Comienza invisible */
 }
 
 /* Definición de la animación */
@@ -106,9 +121,73 @@ main {
 }
 
 
-/* -----------------------------------
-   Todas las secciones
------------------------------------ */
+/* ======================================================================
+
+        HEADER
+
+====================================================================== */
+
+#header-title {
+    width: 100%;
+    max-width: var(--header-item-max-width);
+}
+
+#header-title > h1 {
+    font-size: var(--font-size-header);
+}
+
+#header-nav {
+
+    --line-base-length: var(--large-spacing);
+    --line-hover-length: var(--xlarge-spacing);
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--xlarge-spacing);
+    gap: var(--small-spacing);
+    width: 100%;
+    max-width: var(--header-item-max-width);
+}
+
+#header-nav a {
+    font-size: var(--font-size-medium);
+    color: var(--light-color);
+    text-decoration: none;
+    padding: var(--spacing) 0;
+    position: relative;
+    padding-left: calc(var(--line-base-length) + var(--spacing));
+    transition: color 0.6s ease, padding-left 0.3s ease; /* Transición del color y padding */
+}
+
+#header-nav a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: var(--line-base-length);
+    background-color: var(--light-color);
+    transition: color 0.6s ease, width 0.3s ease;
+}
+
+#header-nav a:hover {
+    color: var(--primary-color);
+    padding-left: calc(var(--line-hover-length) + var(--spacing));
+}
+
+#header-nav a:hover::before {
+    width: var(--line-hover-length);
+    background-color: var(--primary-color);
+}
+
+
+
+/* ======================================================================
+
+        MAIN
+
+====================================================================== */
 
 h2 {
     font-size: var(--font-size-large);
@@ -118,12 +197,12 @@ h2 {
 }
 
 section {
-    margin-bottom: var(--large-spacing); /* Margen inferior para la sección */
+    margin-bottom: var(--xlarge-spacing); /* Margen inferior para la sección */
 }
 
 .item .light {
     font-size: 0.9rem;
-    color: #888;
+    color: var(--light-color);
     margin-top: 10px;
 }
 
@@ -150,7 +229,7 @@ section {
 }
 
 .default-line .item h3 {
-    margin-bottom: 10px;
+    margin-bottom: var(--small-spacing);
     font-size: var(--font-size-medium);
     color: var(--primary-color);
 }
@@ -172,9 +251,9 @@ section {
 .default-multi-line .item {
     background-color: var(--container-bg);
     padding: var(--spacing);
-    margin: 10px;
+    margin: var(--small-spacing);
     border-radius: var(--border-radius);
-    width: calc(50% - 20px);
+    width: calc(50% - 2*var(--small-spacing));
     text-align: center;
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease;
@@ -200,10 +279,30 @@ section {
 }
 
 /* -----------------------------------
+   Encabezado
+----------------------------------- */
+.main-title {
+    text-align: center;
+    margin-top: var(--large-spacing);
+}
+
+.main-title h1 {
+    font-size: var(--font-size-xlarge);
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.main-title p {
+    color: var(--secondary-color);
+    font-size: var(--font-size-medium);
+}
+
+/* -----------------------------------
    Sección Scrolling Skills
 ----------------------------------- */
 
 .scrolling-skills {
+    margin: var(--large-spacing) 0;
     display: flex;
     overflow: hidden;
     position: relative;
@@ -270,12 +369,7 @@ section {
 /* -----------------------------------
    Sección Sobre mí
 ----------------------------------- */
-.about-me {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.about-me p {
+#about-me p {
     font-size: var(--font-size-small);
     color: var(--secondary-color);
     max-width: 800px;
