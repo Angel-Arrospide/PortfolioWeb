@@ -18,7 +18,7 @@ const courses = [
         date: "Agosto 2024"
     },
     {
-        title: "Curso Básico de Ciberseguiridad (15h)",
+        title: "Curso Básico de Ciberseguridad (15h)",
         institution: "CCN-CERT Centro Criptológico Nacional",
         description: [],
         date: "Septiembre 2024"
