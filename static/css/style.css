@@ -137,19 +137,23 @@ main {
 }
 
 #header-nav {
+    display: flex;
+    width: 100%;
+    max-width: var(--header-item-max-width);
+}
 
+.header-nav-sections {
     --line-base-length: var(--large-spacing);
     --line-hover-length: var(--xlarge-spacing);
 
     display: flex;
     flex-direction: column;
+    flex: 7;
     padding-bottom: var(--xlarge-spacing);
     gap: var(--small-spacing);
-    width: 100%;
-    max-width: var(--header-item-max-width);
 }
 
-#header-nav a {
+.header-nav-sections a {
     font-size: var(--font-size-medium);
     color: var(--light-color);
     text-decoration: none;
@@ -159,7 +163,7 @@ main {
     transition: color 0.6s ease, padding-left 0.3s ease; /* Transición del color y padding */
 }
 
-#header-nav a::before {
+.header-nav-sections a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -171,17 +175,92 @@ main {
     transition: color 0.6s ease, width 0.3s ease;
 }
 
-#header-nav a:hover {
+.header-nav-sections a:hover {
     color: var(--primary-color);
     padding-left: calc(var(--line-hover-length) + var(--spacing));
 }
 
-#header-nav a:hover::before {
+.header-nav-sections a:hover::before {
     width: var(--line-hover-length);
     background-color: var(--primary-color);
 }
 
+.header-nav-scroll {
+    position: relative;
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.header-nav-scroll i {
+    font-size: var(--font-size-xlarge);
+    color: var(--light-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Mantiene el icono centrado */
+    transition: color 0.3s ease;
+    animation: animacion-flecha 2s infinite;
+}
+
+.header-nav-scroll i:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.header-nav-scroll i:hover ~ .emblem span {
+    color: var(--primary-color);
+}
+
+@keyframes animacion-flecha {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, -50%) scale(1); /* Mantiene la posición centrada y escala normal */
+    }
+    40% {
+        transform: translate(-50%, calc(-50%)) scale(1.06); /* Mueve hacia abajo y aumenta ligeramente la escala */
+    }
+    60% {
+        transform: translate(-50%, calc(-50%)) scale(1.03); /* Mueve un poco hacia abajo y escala ligeramente */
+    }
+}
+
+
+.emblem {
+    box-sizing: border-box;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    font-weight: bold;
+    animation: spinZ 20s linear infinite;
+    text-align: center;
+    position: relative;
+    pointer-events: none;
+  
+    span {
+        position: absolute;
+        display: inline-block;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-transform: uppercase;
+        font-size: var(--font-size-medium);
+        color: var(--light-color);
+        transition: all .5s cubic-bezier(0, 0, 0, 1);
+        pointer-events: none;
+        transition: color 0.3s ease;
+    }
+}
+  
+@keyframes spinZ {
+    0% {
+      transform: rotateZ(360deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
+    }
+}
 
 /* ======================================================================
 
@@ -405,5 +484,23 @@ footer {
 
     body {
         padding: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .emblem {
+        display: none;
+    }
+
+    @keyframes animacion-flecha {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translate(-50%, -50%); /* Mantiene la posición centrada */
+        }
+        40% {
+            transform: translate(-50%, calc(-50% + 10px)); /* Mueve el icono hacia abajo */
+        }
+        60% {
+            transform: translate(-50%, calc(-50% + 5px)); /* Mueve el icono un poco más hacia abajo */
+        }
     }
 }

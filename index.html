@@ -21,12 +21,49 @@
             <h1 class="bruno-ace-sc-regular">Arróspide</h1>
         </div>
         <nav id="header-nav" class="fade-away">
-            <a href="#about-me">Sobre mí</a>
-            <a href="#experience">Experiencia</a>
-            <a href="#education">Educación</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#certifications">Certificaciones</a>
-            <a href="#courses">Cursos</a>
+            <div class="header-nav-sections">
+                <a href="#about-me">Sobre mí</a>
+                <a href="#experience">Experiencia</a>
+                <a href="#education">Educación</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#certifications">Certificaciones</a>
+                <a href="#courses">Cursos</a>
+            </div>
+            <div  class="header-nav-scroll">
+                <i class="fa-solid fa-arrow-down fa-bounce" id="scroll-icon">
+                    <script>
+                        document.getElementById('scroll-icon').addEventListener('click', function() {
+                            document.getElementById('main').scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        });
+                    </script>
+                </i>
+                <div class="emblem">Deslice*Deslice*</div>
+                <script>
+                    var Emblem = {
+                        init: function(el, str) {
+                            var element = document.querySelector(el);
+                            var text = str ? str : element.innerHTML;
+                            element.innerHTML = '';
+                            for (var i = 0; i < text.length; i++) {
+                            var letter = text[i];
+                            var span = document.createElement('span');
+                            var node = document.createTextNode(letter);
+                            var r = (360 / text.length) * i;
+                            var x = (Math.PI / text.length).toFixed(0) * i;
+                            var y = (Math.PI / text.length).toFixed(0) * i;
+                            span.appendChild(node);
+                            span.style.webkitTransform = 'rotateZ(' + r + 'deg) translate3d(' + x + 'px,' + y + 'px,0)';
+                            span.style.transform = 'rotateZ(' + r + 'deg) translate3d(' + x + 'px,' + y + 'px,0)';
+                            element.appendChild(span);
+                            }
+                        }
+                    };
+
+                    Emblem.init('.emblem');
+                </script>
+            </div>
         </nav>
         <script>
             window.addEventListener('scroll', () => {
@@ -54,7 +91,7 @@
             });
         </script>
     </header>
-    <main>
+    <main id="main">
         <section class="main-title">
             <h1 class="bruno-ace-sc-regular">Ángel Arróspide</h1>
             <p>Estudiante de Ingenieria Informática en Tecnologías de la Información</p>
