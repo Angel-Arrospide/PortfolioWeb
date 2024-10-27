@@ -56,23 +56,6 @@ main {
 ====================================================================== */
 
 /* -----------------------------------
-   Contenedores
------------------------------------ */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: var(--container-bg);
-    padding: var(--spacing);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: all 0.3s ease-in-out;
-}
-
-.container:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* -----------------------------------
    Social links
 ----------------------------------- */
 .social-links {
@@ -285,6 +268,17 @@ section {
     margin-top: 10px;
 }
 
+.item {
+    background-color: var(--container-bg);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.item:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
 /* -----------------------------------
    Default line
 ----------------------------------- */
@@ -295,11 +289,7 @@ section {
 }
 
 .default-line .item {
-    background-color: var(--container-bg);
-    padding: var(--spacing);
-    border-radius: var(--border-radius);
     transition: transform 0.3s ease;
-    box-shadow: var(--box-shadow);
 }
 
 .default-line .item:hover {
@@ -328,13 +318,9 @@ section {
 }
 
 .default-multi-line .item {
-    background-color: var(--container-bg);
-    padding: var(--spacing);
     margin: var(--small-spacing);
-    border-radius: var(--border-radius);
     width: calc(50% - 2*var(--small-spacing));
     text-align: center;
-    box-shadow: var(--box-shadow);
     transition: transform 0.3s ease;
 }
 
