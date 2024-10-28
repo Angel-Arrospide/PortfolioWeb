@@ -24,7 +24,7 @@ certifications.forEach(certification => {
     certificationDiv.classList.add('item');
     certificationDiv.innerHTML = `
         <h3>${certification.title}</h3>
-        <p>${certification.institution}<p>
+        <h4>${certification.institution}<h4>
         <div class="light">${certification.date}</div>
     `;
     certificationList.appendChild(certificationDiv);
