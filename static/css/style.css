@@ -262,12 +262,6 @@ section {
     margin-bottom: var(--xlarge-spacing); /* Margen inferior para la sección */
 }
 
-.item .light {
-    font-size: 0.9rem;
-    color: var(--light-color);
-    margin-top: 10px;
-}
-
 .item {
     background-color: var(--container-bg);
     padding: var(--spacing);
@@ -281,6 +275,24 @@ section {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+.item h3 {
+    margin-bottom: var(--small-spacing);
+    font-size: var(--font-size-medium);
+    color: var(--primary-color);
+}
+
+.item p {
+    margin: var(--spacing) 0;
+    font-size: var(--font-size-small);
+    color: var(--secondary-color);
+}
+
+.item .light {
+    font-size: 0.9rem;
+    color: var(--light-color);
+    margin-top: 10px;
+}
+
 /* -----------------------------------
    Default line
 ----------------------------------- */
@@ -288,17 +300,6 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.default-line .item h3 {
-    margin-bottom: var(--small-spacing);
-    font-size: var(--font-size-medium);
-    color: var(--primary-color);
-}
-
-.default-line .item p {
-    font-size: var(--font-size-small);
-    color: var(--secondary-color);
 }
 
 /* -----------------------------------
@@ -314,16 +315,6 @@ section {
     margin: var(--small-spacing);
     width: calc(50% - 2*var(--small-spacing));
     text-align: center;
-}
-
-.default-multi-line .item h3 {
-    margin-bottom: 10px;
-    font-size: var(--font-size-medium);
-}
-
-.default-multi-line .item p {
-    font-size: var(--font-size-small);
-    color: var(--secondary-color);
 }
 
 .default-3-line .item {
