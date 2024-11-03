@@ -5,7 +5,7 @@ const certifications = [
         date: "Octubre 2021"
     },
     {
-        title: "Operador de UAS <br> Categoría abierta A1 y A3",
+        title: "Piloto de UAS <br> Categoría abierta A1 y A3",
         institution: "AESA - Agencia Estatal de Seguridad Aérea",
         date: "Agosto 2024"
     },

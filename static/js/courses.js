@@ -39,7 +39,7 @@ const courses = [
         title: "Esquema Nacional de Seguridad ENS (20h)",
         institution: "CCN-CERT Centro Criptológico Nacional",
         description: [
-            "aborda los principios y requisitos para garantizar la seguridad de la información en el ámbito público.",
+            "Aborda los principios y requisitos para garantizar la seguridad de la información en el ámbito público.",
             "Incluye la gestión de riesgos, la protección de datos y la implementación de medidas de seguridad adecuadas."
         ],
         date: "Septiembre 2024"
