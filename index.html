@@ -13,6 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Nerko+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Cairo:wght@200..1000&family=Nerko+One&display=swap" rel="stylesheet">
 
+    <script>
+        win_height =  window.innerHeight;
+        win_width =  window.innerWidth;
+        if(
+            (win_width > 1024 && win_height < 550) ||
+            (win_width > 768 && win_width < 1024 && win_height < 470) ||
+            (win_width < 768 && win_height < 700)
+        ) {
+            alert("Esta página no está optimizada para este tamaño de pantalla. Algunos elementos pueden no mostrarse correctamente.")
+        }
+    </script>
 </head>
 <body>
     <header id="header">
@@ -72,11 +83,16 @@
                 const header_nav = document.getElementById('header-nav');
                 const scrollY = window.scrollY;
         
-                // Constantes ajustadas para iniciar el desvanecimiento temprano y hacerlo rápido
-                const title_fadeStart = 30;
-                const title_fadeSpeed = window.innerHeight / 2;
+                // Constantes ajustadas para iniciar el desvanecimiento temprano y hacerlo rápido   
                 const nav_fadeStart = 0;
                 const nav_fadeSpeed = window.innerHeight / 6;
+
+                const title_fadeStart = 30;
+                const title_fadeSpeed = window.innerHeight / 2;
+                if(window.innerHeight < 900) {
+                    const title_fadeStart = nav_fadeStart;
+                    const title_fadeSpeed = nav_fadeSpeed;
+                }
         
                 // Calcular opacidad en función de los desplazamientos
                 let opacity_title = 1 - (scrollY - title_fadeStart) / title_fadeSpeed;
