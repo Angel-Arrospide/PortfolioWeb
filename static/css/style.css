@@ -468,3 +468,30 @@ footer {
         }
     }
 }
+
+
+/* Ajustes para portátiles con poca altura */
+@media ((max-height: 1050px) and (min-width: 1024px))
+    or ((max-height: 930px) and (min-width: 768px))
+{
+    header {
+        display: flex;
+        flex-direction: row; /* Cambia a fila en lugar de columna */
+        align-items: center;
+        justify-content: space-between; /* Distribuye el espacio entre el título y el nav */
+    }
+
+    #header-title > h1 {
+        font-size: var(--font-size-xlarge);
+        margin-right: var(--large-spacing);
+    }
+
+    .header-nav-sections {
+        padding-left: var(--large-spacing);
+        padding-bottom: 0;
+    }
+
+    .header-nav-scroll {
+        display: none;
+    }
+}
